@@ -1,0 +1,214 @@
+[
+  {
+    "id": "fond-accueil",
+    "file": "fond-accueil.webp",
+    "size": [
+      851,
+      1848
+    ]
+  },
+  {
+    "id": "fond-combat",
+    "file": "fond-combat.webp",
+    "size": [
+      853,
+      1844
+    ]
+  },
+  {
+    "id": "fond-journal",
+    "file": "fond-journal.webp",
+    "size": [
+      853,
+      1844
+    ]
+  },
+  {
+    "id": "fond-social",
+    "file": "fond-social.webp",
+    "size": [
+      853,
+      1844
+    ]
+  },
+  {
+    "id": "icone-bag",
+    "file": "icone-bag.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-combat",
+    "file": "icone-combat.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-concentration",
+    "file": "icone-concentration.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-glide",
+    "file": "icone-glide.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-healing",
+    "file": "icone-healing.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-illusion",
+    "file": "icone-illusion.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-inspiration",
+    "file": "icone-inspiration.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-journal",
+    "file": "icone-journal.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-lantern",
+    "file": "icone-lantern.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-pipe",
+    "file": "icone-pipe.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-reaction",
+    "file": "icone-reaction.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-register",
+    "file": "icone-register.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-rest",
+    "file": "icone-rest.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-rod",
+    "file": "icone-rod.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-shield",
+    "file": "icone-shield.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-social",
+    "file": "icone-social.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-spell",
+    "file": "icone-spell.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-staff",
+    "file": "icone-staff.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-tales",
+    "file": "icone-tales.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  },
+  {
+    "id": "icone-vitality",
+    "file": "icone-vitality.png",
+    "transparent": true,
+    "size": [
+      192,
+      192
+    ]
+  }
+]

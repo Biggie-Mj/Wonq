@@ -1,0 +1,8 @@
+const VERSION='wonq-v1.0.0';
+const PREFIX='wonq:'+self.registration.scope+':';
+const CACHE=PREFIX+VERSION;
+const CORE=["index.html", "styles.css", "app.js", "engine.js", "data.js", "storage.js", "gestures.js", "feedback.js", "manifest.webmanifest", "app-icon.png", "fond-accueil.webp"];
+const EXTRA=["VERIFICATIONS.md","icone-inspiration.png", "icone-vitality.png", "icone-register.png", "icone-tales.png", "MANIFESTE-ASSETS.json", "icone-bag.png", "icone-journal.png", "ARBITRAGES.md", "icone-staff.png", "icone-healing.png", "icone-rod.png", "icone-concentration.png", "icone-lantern.png", "icone-glide.png", "icone-illusion.png", "icone-combat.png", "icone-spell.png", "sources.json", "icone-social.png", "icone-shield.png", "icone-reaction.png", "icone-rest.png", "fond-journal.webp", "fond-social.webp", "icone-pipe.png", "fond-combat.webp", "README.md"];
+self.addEventListener('install',event=>event.waitUntil((async()=>{const cache=await caches.open(CACHE);await cache.addAll(CORE.map(x=>'./'+x));for(const name of EXTRA)await cache.add('./'+name);})()));
+self.addEventListener('activate',event=>event.waitUntil((async()=>{for(const key of await caches.keys())if(key.startsWith(PREFIX)&&key!==CACHE)await caches.delete(key);await self.clients.claim();})()));
+self.addEventListener('fetch',event=>{const u=new URL(event.request.url);if(event.request.method!=='GET'||!u.href.startsWith(self.registration.scope))return;event.respondWith((async()=>{const cache=await caches.open(CACHE);if(event.request.mode==='navigate')return (await cache.match('./index.html'))||fetch(event.request);return (await cache.match(event.request,{ignoreSearch:true}))||fetch(event.request);})());});

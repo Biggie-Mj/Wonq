@@ -1,0 +1,10 @@
+PASS UI attaque, confirmation, critique et dépense
+PASS UI fermeture sans dépense
+PASS UI annuler tour
+PASS UI pavé tactile dégâts
+PASS UI inventaire suppression et restauration
+PASS UI journal autosauvegarde
+PASS stockage export/import et identifiant double toucher
+PASS sauvegarde persistée
+PASS UI lancement de sort et emplacement
+PASS UI choix de table des Contes
