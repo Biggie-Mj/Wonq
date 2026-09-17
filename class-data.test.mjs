@@ -1,0 +1,12 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {CLASSES,totalLevel,proficiency,unlockedFeatures,spellSlots,pactSlots,casterLevel,attacksPerAction,resourceBlueprints,sneakDice,rageData} from './class-data.js';
+const stats={str:14,dex:16,con:14,int:16,wis:14,cha:16};
+const ch=(a,b={id:'',level:0})=>({classes:[a,b],stats});
+test('13 classes disponibles',()=>assert.equal(Object.keys(CLASSES).length,13));
+test('maîtrise et niveau total multiclassé',()=>{const c=ch({id:'wizard',level:5},{id:'fighter',level:3});assert.equal(totalLevel(c),8);assert.equal(proficiency(c),3);assert.equal(casterLevel(c),5);assert.deepEqual(spellSlots(c),[4,3,2]);});
+test('magie de pacte séparée',()=>assert.deepEqual(pactSlots(ch({id:'warlock',level:5})),{slots:2,level:3}));
+test('attaques supplémentaires guerrier',()=>{assert.equal(attacksPerAction(ch({id:'fighter',level:5})),2);assert.equal(attacksPerAction(ch({id:'fighter',level:11})),3);assert.equal(attacksPerAction(ch({id:'fighter',level:20})),4);});
+test('aptitudes débloquées selon niveau',()=>{const low=unlockedFeatures(ch({id:'monk',level:2}));const high=unlockedFeatures(ch({id:'monk',level:5}));assert.ok(!low.some(f=>f.name==='Frappe étourdissante'));assert.ok(high.some(f=>f.name==='Frappe étourdissante'));});
+test('ressources automatiques',()=>{assert.equal(resourceBlueprints(ch({id:'monk',level:8})).find(r=>r.name==='Ki').max,8);assert.equal(resourceBlueprints(ch({id:'paladin',level:6})).find(r=>r.name==='Imposition des mains').max,30);});
+test('progressions roublard et barbare',()=>{assert.equal(sneakDice(8),4);assert.deepEqual(rageData(9),{uses:4,bonus:3});});

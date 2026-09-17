@@ -1,1 +1,20 @@
-{"id":"./","name":"Wonq — Gardien des Absents","short_name":"Wonq","start_url":"./","scope":"./","display":"standalone","background_color":"#111f24","theme_color":"#111f24","lang":"fr","icons":[{"src":"./app-icon.png","sizes":"192x192","type":"image/png","purpose":"any"}]}
+{
+  "name": "Compagnon D&D 5e — Universel",
+  "short_name": "Compagnon 5e",
+  "description": "Compagnon universel D&D 5e Legacy avec classes et sous-classes automatiques",
+  "lang": "fr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#10251f",
+  "theme_color": "#10251f",
+  "icons": [
+    {
+      "src": "./icone-interface-d20.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

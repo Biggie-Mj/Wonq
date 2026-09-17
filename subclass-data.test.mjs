@@ -1,0 +1,14 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {SUBCLASS_COUNT,subclassOptions,subclassCriticalThreshold,subclassInitiativeBonus} from './subclass-data.js';
+import {unlockedFeatures,casterLevel,spellSlots,attacksPerAction} from './class-data.js';
+const stats={str:14,dex:16,con:14,int:18,wis:16,cha:18};
+const ch=(a,b={id:'',level:0,subclass:''})=>({classes:[a,b],stats,spellcasting:{ability:'auto'}});
+const m=n=>Math.floor((n-10)/2);
+test('118 sous-classes Legacy intégrées',()=>assert.equal(SUBCLASS_COUNT,118));
+test('les options de sous-classe suivent la classe',()=>{assert.ok(subclassOptions('barbarian').length>=9);assert.ok(subclassOptions('wizard').some(([id])=>id==='wizard-bladesinging'));});
+test('aptitudes de sous-classe débloquées au bon palier',()=>{const c=ch({id:'fighter',level:3,subclass:'fighter-battle-master'});const fs=unlockedFeatures(c);assert.ok(fs.some(f=>f.kind==='subclass'&&/Combat Superiority/.test(f.name)));});
+test('tiers de lanceur des archétypes',()=>{const c=ch({id:'fighter',level:6,subclass:'fighter-eldritch-knight'});assert.equal(casterLevel(c),2);assert.deepEqual(spellSlots(c),[3]);});
+test('attaque supplémentaire de sous-classe',()=>{const c=ch({id:'bard',level:6,subclass:'bard-college-of-swords'});assert.equal(attacksPerAction(c),2);});
+test('Champion étend la plage de critique',()=>{assert.equal(subclassCriticalThreshold(ch({id:'fighter',level:3,subclass:'fighter-champion'})),19);assert.equal(subclassCriticalThreshold(ch({id:'fighter',level:15,subclass:'fighter-champion'})),18);});
+test('bonus initiative de sous-classe',()=>{const c=ch({id:'wizard',level:2,subclass:'wizard-war-magic'});assert.equal(subclassInitiativeBonus(c,m),4);});
